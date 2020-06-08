@@ -32,4 +32,4 @@ app.get('/about', async (req,res)=>{
     res.render('about')
 })
 
-app.listen(3000);
+app.listen(config.port, console.log(`Asthriona's blog is now running on http://localhost:${config.port}`));
