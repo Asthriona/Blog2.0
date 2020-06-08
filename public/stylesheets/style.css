@@ -1,0 +1,120 @@
+html, body{
+    background-color: #232323;
+    color: aliceblue;
+}
+.card {
+    width: 25rem;
+    height: 25rem;
+    background-color: #1b1b1b;
+    color: aliceblue;
+}
+.post-thumbnail {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: 50%;
+}
+.preview-thumb{
+    background-position: 50%;
+    background-size: cover;
+    width: 100%;
+    height: 10rem;
+}
+.posts{
+    padding: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content-wrap {
+    padding-bottom: 8rem;    /* Footer height */
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8rem;            /* Footer height */
+  }
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #38529C;
+    height: 4.5rem;
+}
+.main-nav {
+    height: 100%;
+}
+.nav-link {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 1rem;
+    padding: 0.3rem;
+}
+.nav-links {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    padding: 0.3rem;
+}
+.nav-link.nav-link.nuxt-link-exact-active {
+    border-bottom: 3px solid #ffd000;
+}
+.nav-links a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+.nav-link a:hover,
+.nav-link a:active,
+.nav-link.nuxt-link-exact-active a {
+    color: #ffd000;
+}
+li{
+    list-style-type: none;
+}
+
+
+
+/* Footer by Aimee => http://www.mangoya.cn/ */
+.footBack{
+    color:#888;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 0.5;
+    text-align: center;
+    width:100%;
+    min-height: 50px;
+    margin-top: 25px;
+    position: absolute;
+}
+.fcontainer{
+    width:100%;
+    background: #1b1b1b;
+    padding:15px 10px 10px 10px;
+    box-sizing: border-box;
+    width: 100%!important;
+}
+.footBack a{
+    color:#d86100;
+    z-index: 3;
+}
