@@ -1,8 +1,10 @@
-<%- include('../partials/header.ejs') -%>
+<%- include('../partials/logged_header.ejs') -%>
+<%- include('../partials/navbar.ejs') -%>
 <div class="container">
 <h1 class="mb-4">Poggy!</h1>
 <h1 class="mb-4">Edit Articles</h1>
 <form action="/articles/<%= article.id %>?_method=" PUT"" method="post">
-    <%- include('_formfields') %>
+    <%- include('../partials/_formfields') %>
 </form>
+</div>
 <%- include('../partials/footer.ejs') -%>

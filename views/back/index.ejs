@@ -1,1 +1,20 @@
-<h1>Hello :)</h1>
+<%- include('../partials/logged_header.ejs') -%>
+<%- include('../partials/navbar.ejs') -%>
+<div class="container">
+    <div style="margin-top: 5rem;"></div>
+    <h1 class="mb-4 mt-4">Asthriona's blog Admin panel</h1>
+    <div style="margin-top: 2rem;">
+        <a href="/back/new" class="btn btn-warning mb-4">New article</a>
+    </div>
+    <% articles.forEach(articles =>{ %>
+    <div class="jumbotron">
+        <h1 class="display-4"><%= articles.title %></h1>
+        <p class="lead"><%= articles.description %></p>
+        <a class="btn btn-primary" href="#" role="button">Edit</a>
+        <a href="/back/edit/<%= articles.id %>" class="btn btn-warning">Edit</a>
+        <form action="/back/<%= articles.id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+    </div>
+    <% }) %>
+</div>
