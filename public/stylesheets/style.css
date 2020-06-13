@@ -10,10 +10,9 @@ html, body{
 }
 .post-thumbnail {
     width: 100%;
-    height: 300px;
+    height: 400px;
     background-size: cover;
     background-position: center;
-    margin-top: 8.5rem;
   }
 .preview-thumb{
     background-position: 50%;
@@ -54,6 +53,7 @@ html, body{
   }
   .main-header {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
