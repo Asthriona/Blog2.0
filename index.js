@@ -1,11 +1,12 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
-var config = require('./config.json')
+var config = require('./config.json');
 var session = require('express-session');
 var DiscordStrategies = require('./strategies/discordstrategies');
 var MongoStore = require('connect-mongo')(session);
-Article = require('./models/article')
+var passport = require('passport');
+Article = require('./models/article');
 var app = express();
 
 //router
@@ -22,7 +23,7 @@ app.use(session({
       maxAge: 60000 * 60 * 72
     },
     saveUninitialized: false,
-    name: 'Yukiko_Yummy_cookie',
+    name: "Asthriona's Yummy cookie",
     store: new MongoStore({ mongooseConnection: mongoose.connection })
   }));
 
@@ -32,6 +33,8 @@ mongoose.connect(config.dbURI, {
     useCreateIndex: true
 }).then(() => console.log("Connected to Kurisu database."));
 
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 app.set('view engine', 'ejs');
