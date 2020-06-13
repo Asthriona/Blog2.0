@@ -29,10 +29,10 @@ router.post('/', async (req,res)=>{
    });
    try{
        article = await article.save()
-       res.redirect(`/articles/${article.slug}`)
+       res.redirect(`/${article.slug}`)
    } catch(e){
        console.log(e)
-    res.render('articles/new', {article: article})
+    res.render('back/new', {article: article})
    }
 });
 router.put('/:id', async (req,res)=>{
@@ -45,10 +45,10 @@ router.put('/:id', async (req,res)=>{
     });
     try{
         article = await article.save()
-        res.redirect(`/articles/${article.slug}`)
+        res.redirect(`/${article.slug}`)
     } catch(e){
         console.log(e)
-     res.render(`article/edit/${id}`, {article: article})
+     res.render(`articles/edit/${id}`, {article: article})
     }
  });
 router.delete('/:id', async (req,res)=>{
@@ -64,9 +64,9 @@ async function saveArticleAndRedirect(path){
             article.markdown = req.body.markdown
         try{
             article = await article.save()
-            res.redirect(`/articles/${article.slug}`)
+            res.redirect(`/back/${article.slug}`)
         }catch(e){
-            res.render(`article/${path}`, {article: article})
+            res.render(`articles/${path}`, {article: article})
         }
     }
 }
