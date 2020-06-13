@@ -5,7 +5,7 @@
         <div class="row">
             <div class="posts col col-sm-12">
                 <% articles.forEach(articles =>{ %>
-                <a href="<%= articles.slug %>" style="text-decoration: none; color: black;">
+                <a href="/articles/<%= articles.slug %>" style="text-decoration: none; color: black;">
                 <div class="card mt-4 mx-2">
                     <img class="preview-thumb" src="<%= articles.img %>" alt="Card image cap">
                     <div class="card-body">
