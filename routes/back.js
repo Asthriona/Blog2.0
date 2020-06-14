@@ -9,7 +9,7 @@ function isAuthorise(req, res, next) {
         console.log(`User ${req.user.username} is logged in (${req.user.email})/${req.user.did}`);
         next();
     } else {
-        res.redirect('/');
+        res.redirect('/auth');
     }
 }
 
