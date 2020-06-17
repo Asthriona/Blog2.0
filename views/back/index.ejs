@@ -10,7 +10,7 @@
     <div class="jumbotron">
         <h1 class="display-4"><%= articles.title %></h1>
         <p class="lead"><%= articles.description %></p>
-        <a class="btn btn-primary" href="#" role="button">Edit</a>
+        <a class="btn btn-primary" href="/articles/<%= articles.slug %>" role="button">Read</a>
         <a href="/back/edit/<%= articles.id %>" class="btn btn-warning">Edit</a>
         <form action="/back/<%= articles.id %>?_method=DELETE" method="POST" class="d-inline">
             <button type="submit" class="btn btn-danger">Delete</button>
