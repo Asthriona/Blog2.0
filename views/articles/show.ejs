@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') -%>
 <%- include('../partials/navbar.ejs') -%>
-    <div class="post-thumbnail" style="background-image: url(<%= article.img %>);"></div>
+    <div class="post-thumbnail" style="background-image: url("<%= article.img %>");"></div>
     <div class="container">
         <h1 class=" mb-1 text-center"><%= article.title %></h1>
         <div class="text-muted mb-4">
@@ -11,7 +11,7 @@
         <hr>
         <div class="row panel">
             <div class="col-md-8 col-xs-12">
-              <img src="https://cdn.asthriona.com/newpp.jpg" rounded class="pull-left mr-2" style="float:left;height:110px;"
+              <img src="https://cdn.asthriona.com/newpp.jpg" rounded class="pull-left mr-2"
               ></b-img>
               <div class="img-text">
                 <h1>Asthriona Ng</h1>
