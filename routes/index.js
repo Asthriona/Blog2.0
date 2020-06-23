@@ -9,7 +9,7 @@ router.get('/', async (req,res)=>{
     var articles = await Article.find().sort({
         createdAt: 'desc'
     })
-    res.render('index', { articles: articles })
+    res.render('index', { articles: articles, title: title })
 });
 router.get('/about', async (req,res)=>{
     res.render('about', {

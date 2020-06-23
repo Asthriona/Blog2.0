@@ -13,6 +13,9 @@ function isAuthorise(req, res, next) {
     }
 }
 
+router.get('/login', async (req,res)=>{
+    res.render('back/login', {title: "Asthriona - Login"})
+});
 router.get('/', isAuthorise, async (req,res)=>{
     var articles = await Article.find().sort({
         createdAt: 'desc'
@@ -33,7 +36,7 @@ router.get('/edit/:id', isAuthorise, async (req,res)=>{
         article: article,
         username: req.user.username,
         avatar: `https://cdn.discordapp.com/avatars/${req.user.did}/${req.user.avatar}?size=2048`,
-        title: "Asthriona - Edit " + title
+        title: "Asthriona - Edit ⇒ " + article.title
     })
 });
 router.post('/', isAuthorise, async (req,res)=>{

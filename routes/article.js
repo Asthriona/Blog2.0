@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 
 var Article = require('../models/article');
+const article = require('../models/article');
 
 
 router.get('/', function (req,res){
@@ -11,7 +12,7 @@ router.get('/', function (req,res){
 router.get('/:slug', async (req,res)=>{
     const article = await Article.findOne({slug: req.params.slug});
     if(article == null) res.redirect(('/'));
-    res.render('articles/show', {article: article});
+    res.render('articles/show', {article: article, title: "Asthriona - "+ article.title });
 });
 async function saveArticleAndRedirect(path){
     return async (req,res)=>{
