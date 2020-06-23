@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/asthriona
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://Asthriona.com
+  * I am asthriona (https://keybase.io/asthriona) on keybase.
+  * I have a public key ASAsW5V7ot9k5AmVKpUZiE5Bz-SJ0tBSTGRwOO7c3iTOXwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01015605358c2a0b701e0184db837e2a12ceea8a3365c949fc4fa84a86b7585393620a",
+      "host": "keybase.io",
+      "kid": "01202c5b957ba2df64e409952a9519884e41cfe489d2d0524c647038eedcde24ce5f0a",
+      "uid": "be256b994158794e24c34f7df9e56b19",
+      "username": "asthriona"
+    },
+    "merkle_root": {
+      "ctime": 1570758587,
+      "hash": "68f1aab953761ef3df6666f5b33cc357d96ae20e3bcf7fceb38bd67b0a4485028fc1c5cee1057e00e38f4bb3f7854bc557ca6490028630f4f5d08eac3f4ac130",
+      "hash_meta": "d535ed15a3063b091b5649f1f80fe8a7171ffeaffbac5e759ef46088a180e7b2",
+      "seqno": 7986603
+    },
+    "service": {
+      "entropy": "bxV9xHDHjs+hFTv78+YxNzbC",
+      "hostname": "Asthriona.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.6.0"
+  },
+  "ctime": 1570758596,
+  "expire_in": 504576000,
+  "prev": "0afdecef46866d917bdc84bf06c1efce38c4a5902a848cf6e3dcc2f3037279e3",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgLFuVe6LfZOQJlSqVGYhOQc/kidLQUkxkcDju3N4kzl8Kp3BheWxvYWTESpcCCMQgCv3s70aGbZF73IS/BsHvzjjEpZAqhIz249zC8wNyeePEIAeHTcaTF/S/W2OLO8nMEvLXjYSoIDU3iyUBIpnBO2NWAgHCo3NpZ8RA0T9RHgtzPIpV60McUw/ENBVThM/Ufqyqa5VQZy1hD9umNwchEI5vSOgsUaXEputo4/TIvtJuY7tTuSIa9k7VDahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMmhSHE+5haZ5XFrghZTVbUGCmX44iN0Cp3c0I1ycfrJo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/asthriona
+
+==================================================================
