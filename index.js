@@ -1,4 +1,5 @@
 var express = require('express');
+var helmet = require('helmet');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 var config = require('./config.json');
@@ -17,6 +18,7 @@ var authRouter = require('./routes/auth');
 
 
 //middleware
+app.use(helmet())
 app.use(session({
     secret: config.secret,
     cookie: {
@@ -38,7 +40,7 @@ app.use(passport.session());
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 app.set('view engine', 'ejs');
-app.set('x-powered-by', 'AshquiRenee Blog');
+app.set('x-powered-by', 'AshquiRenee WS');
 app.use(methodOverride('_method'))
 app.use('/', indexRoute);
 app.use('/articles', articleRoute);
