@@ -35,6 +35,10 @@ var articleSchema = new mongoose.Schema({
     sanitizedHtml: {
         type: String,
         required: true
+    },
+    hidden: {
+        type: Boolean,
+        required: true
     }
 });
 articleSchema.pre('validate', function(next){

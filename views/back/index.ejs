@@ -8,7 +8,9 @@
     </div>
     <% articles.forEach(articles =>{ %>
     <div class="jumbotron">
-        <h1 class="display-4"><%= articles.title %></h1>
+        <% let hide = ""; 
+        if(articles.hidden == true) hide = "[hidden] - "%>
+        <h1 class="display-4"><%= hide %><%= articles.title %></h1>
         <p class="lead"><%= articles.description %></p>
         <a class="btn btn-primary" href="/articles/<%= articles.slug %>" role="button">Read</a>
         <a href="/back/edit/<%= articles.id %>" class="btn btn-warning">Edit</a>

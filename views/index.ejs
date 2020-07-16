@@ -4,7 +4,13 @@
         <h1 class="mb-4">Poggy!</h1>
         <div class="row">
             <div class="posts col col-sm-12">
-                <% articles.forEach(articles =>{ %>
+                <% let hidden = [];
+                for (let i = 0; i < articles.length; i++){
+                    if(articles[i].hidden == false){
+                        hidden.push(articles[i]);
+                    };
+                }
+                hidden.forEach(articles =>{ %>
                 <a href="/articles/<%= articles.slug %>" style="text-decoration: none; color: black;">
                 <div class="card mt-4 mx-2">
                     <img class="preview-thumb" src="<%= articles.img %>" alt="Card image cap">
