@@ -25,7 +25,12 @@
   <meta property="og:title" content="Asthriona">
   <meta property="og:description" content="Hi! I'm Asthriona, and I dont have name.">
   <meta name="twitter:image" content="https://cdn.siriushd.net/chrome_BqyTEO9jr3.png">
-    <title>New! D:</title>
+    <% if(!title){
+        pageTitle = "Blog"
+    }else{
+        pageTitle = title
+    }%>
+    <title><%= pageTitle %></title>
 </head>
 <body>
     <div id="page-container">
