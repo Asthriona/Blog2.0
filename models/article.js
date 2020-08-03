@@ -3,6 +3,7 @@ var marked = require('marked');
 var slugify = require('slugify');
 var createDomPurify = require('dompurify');
 var {JSDOM} = require('jsdom');
+const { defaults } = require('marked');
 
 var dompurify = createDomPurify(new JSDOM().window)
 
@@ -38,6 +39,7 @@ var articleSchema = new mongoose.Schema({
     },
     hidden: {
         type: Boolean,
+        default: false,
         required: true
     }
 });
