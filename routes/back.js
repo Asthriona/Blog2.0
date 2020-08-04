@@ -39,6 +39,18 @@ router.get('/edit/:id', isAuthorise, async (req,res)=>{
         title: "Asthriona - Edit ⇒ " + article.title
     })
 });
+router.get('/hide/:id', async (req,res)=>{
+    const article = await Article.findById(req.params.id)
+    article.hidden = true;
+    await article.save()
+    res.redirect("/back")
+});
+router.get('/unhide/:id', async (req,res)=>{
+    const article = await Article.findById(req.params.id)
+    article.hidden = false;
+    article.save()
+    res.redirect("/back")
+});
 router.post('/', isAuthorise, async (req,res)=>{
    let article = new Article({
        title: req.body.title,
