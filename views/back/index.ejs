@@ -8,6 +8,7 @@
     </div>
     <% articles.forEach(articles =>{ %>
     <div class="jumbotron">
+        <!--<img src="<%= articles.img %>" alt="<%= articles.title %>" style="float: right;" sizes="200px">-->
         <% let hide = ""; 
         if(articles.hidden == true) hide = "[hidden] - "%>
         <h1 class="display-4"><%= hide %><%= articles.title %></h1>
