@@ -1,5 +1,5 @@
 var express = require('express');
-var createError = require('createerror');
+var createError = require('create-error');
 var helmet = require('helmet');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
