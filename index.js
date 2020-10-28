@@ -21,32 +21,38 @@ var authRouter = require('./routes/auth');
 //middleware
 //app.use(helmet())
 app.use(session({
-    secret: config.secret,
-    cookie: {
-      maxAge: 60000 * 60 * 72
-    },
-    saveUninitialized: false,
-    name: "Asthriona's Yummy cookie",
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
-  }));
+  secret: config.secret,
+  cookie: {
+    maxAge: 60000 * 60 * 72
+  },
+  saveUninitialized: false,
+  name: "Asthriona's Yummy cookie",
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
 
 mongoose.connect(config.dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
 }).then(() => console.log("Connected to Kurisu database."));
 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('public'))
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 app.set('view engine', 'ejs');
 app.set('x-powered-by', 'AshquiRenee WS');
 app.use(methodOverride('_method'))
-app.use('/', indexRoute);
-app.use('/articles', articleRoute);
-app.use('/back', backRoute);
-app.use('/auth', authRouter);
+if (config.maintenance == true) {
+  app.get('*', (req, res) => {
+    res.render('maintenance')
+  });
+} else {
+  app.use('/', indexRoute);
+  app.use('/articles', articleRoute);
+  app.use('/back', backRoute);
+  app.use('/auth', authRouter);
+}
 
 app.listen(config.port, console.log(`Asthriona's blog is now running on http://localhost:${config.port}`));
