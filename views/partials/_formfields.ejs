@@ -7,6 +7,8 @@
     <textarea required name="markdown" id="markdown" cols="10" rows="10" class="form-control"> <%= article.markdown %></textarea>
     <label for="img">Image</label>
     <input type="text" name="img" id="img" value="<%= article.img %>" required class="form-control">
+    <label for="hidden">Hidden?</label>
+    <input type="checkbox" name="hidden" id="hidden">
 
 </div>
 <a href="/back" class="btn btn-outline-primary">Cancel</a>
