@@ -4,12 +4,10 @@ config = require("../config.json");
 var Site = require('../models/discord');
 
 passport.serializeUser((user, done) => {
-    console.log("Serializing user");
     done(null, user.id)
 })
 
-passport.deserializeUser(async (id, done) => {
-    console.log("Deserializing user");
+passport.deserializeUser(async(id, done) => {
     var user = await Site.findById(id);
     if (user) done(null, user)
 });
@@ -19,21 +17,20 @@ passport.use(new DiscordStrategies({
     clientSecret: config.client_secret,
     callbackURL: config.client_redirect,
     scope: ['identify', 'guilds', 'email']
-}, async (accessToken, refreshToken, profile, done) => {
+}, async(accessToken, refreshToken, profile, done) => {
     try {
         var user = await Site.findOne({ did: profile.id });
         if (user) {
-            var updatedUser = await Site.findOneAndUpdate({ did: profile.id },
-                {
-                    username: profile.username,
-                    tag: profile.discriminator,
-                    avatar: profile.avatar,
-                    email: profile.email,
-                    guilds: profile.guilds,
-                    premium: profile.premium_type,
-                    local: profile.locale,
-                    flags: profile.flags
-                });
+            var updatedUser = await Site.findOneAndUpdate({ did: profile.id }, {
+                username: profile.username,
+                tag: profile.discriminator,
+                avatar: profile.avatar,
+                email: profile.email,
+                guilds: profile.guilds,
+                premium: profile.premium_type,
+                local: profile.locale,
+                flags: profile.flags
+            });
             var savedUser = await updatedUser.save();
             done(null, savedUser);
         } else {
@@ -57,4 +54,3 @@ passport.use(new DiscordStrategies({
         done(error, null);
     }
 }));
-
