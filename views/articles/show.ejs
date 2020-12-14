@@ -1,25 +1,45 @@
 <%- include('../partials/headerShow.ejs') -%>
-<%- include('../partials/navbar.ejs') -%>
-    <div class="post-thumbnail" style="background-image: url(<%= article.img %>);"></div>
-    <div class="container">
-        <h1 class=" mb-1 text-center"><%= article.title %></h1>
-        <div class="text-muted mb-4">
-            <%= article.createdAt.toLocaleDateString() %>
-        </div>
-        <hr>
-        <div class="content"><%- article.sanitizedHtml %></div>
-        <hr>
-        <div class="row panel">
-            <div class="col-md-8 col-xs-12">
-              <img src="https://cdn.asthriona.com/newpp.jpg" rounded class="pull-left mr-2 profilpict"
-              ></b-img>
-              <div class="img-text">
-                <h1>Asthriona Ng</h1>
-                <p>People call me "Cool kid" Because I know code, video editing, and I'm the best wow player of The Wall. But don't let them fool you! I'm not cool :p<br>
-                <center><a href="https://Twitter.com/Asthriona" target="_blank" rel="noopener noreferrer">twitter</a> | <a href="http://github.com/Asthriona" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://Asthriona.com" target="_blank" rel="noopener noreferrer">WebSite</a> | <a href="http://instagram.com/Asthrionaa" target="_blank" rel="noopener noreferrer">Instagram</a></center>
-                </p>
-              </div>
+    <%- include('../partials/navbar.ejs') -%>
+        <div class="post-thumbnail" style="background-image: url(<%= article.img %>);"></div>
+        <div class="container">
+            <h1 class=" mb-1 text-center">
+                <%= article.title %>
+            </h1>
+            <div class="text-muted mb-4">
+                <%= article.createdAt.toLocaleDateString() %>
             </div>
-          </div>
-          </div>
+            <hr>
+            <div class="content">
+                <%- article.sanitizedHtml %>
+            </div>
+            <hr>
+            <div class="row panel">
+                <% if(!profile.username){%>
+                    <div class="col-md-8 col-xs-12">
+                        <img src="https://asthriona.s3.fr-par.scw.cloud/img/2020/12/newpp.jpg" rounded class="pull-left rounded mr-2 profilpict">
+                        <div class="img-text">
+                            <h1>Asthriona Ng</h1>
+                            <p>People call me "Cool kid" Because I know code, video editing, and I'm the best wow player of The Wall. But don't let them fool you! I'm not cool :p<br>
+                                <center><a href="https://Twitter.com/Asthriona" target="_blank" rel="noopener noreferrer">twitter</a> | <a href="http://github.com/Asthriona" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://Asthriona.com"
+                                        target="_blank" rel="noopener noreferrer">WebSite</a> | <a href="http://instagram.com/Asthrionaa" target="_blank" rel="noopener noreferrer">Instagram</a></center>
+                            </p>
+                        </div>
+                    </div>
+                    <%}else{%>
+                        <div class="col-md-8 col-xs-12">
+                            <img src="<%= profile.avatar %>" rounded class="pull-left mr-2 rouded profilpict">
+                            <div class="img-text">
+                                <h1>
+                                    <%= profile.username %>
+                                </h1>
+                                <p>
+                                    <%= profile.desc %><br>
+                                        <center><a href="https://Twitter.com/<%= profile.twitter %>" target="_blank" rel="noopener noreferrer">twitter</a> | <a href="http://github.com/<%= profile.github %>" target="_blank" rel="noopener noreferrer">GitHub</a>                                            |
+                                            <a href="<%= profile.website %>" target="_blank" rel="noopener noreferrer">WebSite</a> | <a href="http://instagram.com/<%= profile.instagram %>" target="_blank" rel="noopener noreferrer">Instagram</a></center>
+                                </p>
+                            </div>
+                        </div>
+                        <%}%>
+            </div>
+        </div>
         <%- include('../partials/footer.ejs') -%>

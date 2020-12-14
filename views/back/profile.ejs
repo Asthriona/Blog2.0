@@ -1,0 +1,19 @@
+<%- include('../partials/logged_header.ejs') -%>
+    <%- include('../partials/navbar.ejs') -%>
+        <div class="container" style="margin-top: 2rem;">
+            <div class="row">
+                <div class="col-12 mt-4">
+                    <div class="text-center mt-4">
+                        <h1>
+                            <%= req.user.username %>'s profile</h1>
+                        <p>
+                            Here you can edit your author profile, this will show under every article.
+                        </p>
+                    </div>
+                    <form action="/back/profile" method="post">
+                        <h1>THIS IS A WORK IN PROGRESS AND NOT FUNCTIONAL AT THE MOMENT</h1>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%- include('../partials/footer.ejs') -%>

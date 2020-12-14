@@ -1,28 +1,33 @@
 <%- include('../partials/logged_header.ejs') -%>
-<%- include('../partials/navbar.ejs') -%>
-<div class="container">
-    <div style="margin-top: 5rem;"></div>
-    <h1 class="mb-4 mt-4">Asthriona's blog Admin panel</h1>
-    <div style="margin-top: 2rem;">
-        <a href="/back/new" class="btn btn-warning mb-4">New article</a>
-    </div>
-    <% articles.forEach(articles =>{ %>
-    <div class="jumbotron">
-        <!--<img src="<%= articles.img %>" alt="<%= articles.title %>" style="float: right;" sizes="200px">-->
-        <% let hide = ""; 
+    <%- include('../partials/navbar.ejs') -%>
+        <div class="container">
+            <div style="margin-top: 5rem;"></div>
+            <h1 class="mb-4 mt-4">Asthriona's blog Admin panel</h1>
+            <div style="margin-top: 2rem;">
+                <a href="/back/new" class="btn btn-warning mb-4">New article</a>
+            </div>
+            <% articles.forEach(articles =>{ %>
+                <div class="jumbotron">
+                    <img src="<%= articles.img %>" alt="<%= articles.title %>" style="float: right;" sizes="200px">
+                    <% let hide = ""; 
         if(articles.hidden == true) hide = "[hidden] - "%>
-        <h1 class="display-4"><%= hide %><%= articles.title %></h1>
-        <p class="lead"><%= articles.description %></p>
-        <a class="btn btn-primary" href="/articles/<%= articles.slug %>" role="button">Read</a>
-        <a href="/back/edit/<%= articles.id %>" class="btn btn-warning">Edit</a>
-        <% if(articles.hidden == true){%>
-        <a href="/back/unhide/<%= articles.id %>" class="btn btn-secondary">Make Public</a>
-        <% }else if(articles.hidden == false){%>
-        <a href="/back/hide/<%= articles.id %>" class="btn btn-secondary">Hide</a>
-        <%}%>
-        <form action="/back/<%= articles.id %>?_method=DELETE" method="POST" class="d-inline">
-            <button type="submit" class="btn btn-danger">Delete</button>
-          </form>
-    </div>
-    <% }) %>
-</div>
+                        <h1 class="display-4">
+                            <%= hide %>
+                                <%= articles.title %>
+                        </h1>
+                        <p class="lead">
+                            <%= articles.description %>
+                        </p>
+                        <a class="btn btn-primary" href="/articles/<%= articles.slug %>" role="button">Read</a>
+                        <a href="/back/edit/<%= articles.id %>" class="btn btn-warning">Edit</a>
+                        <% if(articles.hidden == true){%>
+                            <a href="/back/unhide/<%= articles.id %>" class="btn btn-secondary">Make Public</a>
+                            <% }else if(articles.hidden == false){%>
+                                <a href="/back/hide/<%= articles.id %>" class="btn btn-secondary">Hide</a>
+                                <%}%>
+                                    <form action="/back/<%= articles.id %>?_method=DELETE" method="POST" class="d-inline">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                </div>
+                <% }) %>
+        </div>

@@ -93,4 +93,13 @@ async function saveArticleAndRedirect(path) {
     }
 }
 
+router.get('/profile', isAuthorise, (req, res) => {
+    res.render("back/profile", {
+        req,
+        title: "Profile",
+        username: req.user.username,
+        avatar: `https://cdn.discordapp.com/avatars/${req.user.did}/${req.user.avatar}?size=2048`,
+    })
+})
+
 module.exports = router;
