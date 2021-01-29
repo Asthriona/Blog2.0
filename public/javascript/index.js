@@ -2,14 +2,25 @@ console.log('%c Asthriona', 'font-size:100px;color:#fff;text-shadow:0 3px 0 #ccc
 console.log("Website developed by Asthriona");
 console.log("Hosted by Sirius Media Group");
 console.log("GitHub: https://github.com/Asthriona/Blog2.0");
-
+window.onload = function() {
+    var pageTitle = document.title;
+    var attentionMessage = '(*ﾉωﾉ) ' + document.title;
+    document.addEventListener('visibilitychange', function(e) {
+        var isPageActive = !document.hidden;
+        if (!isPageActive) {
+            document.title = attentionMessage;
+        } else {
+            document.title = pageTitle;
+        }
+    });
+};
 var oldTime = new Date('2019/02/19 19:09:00');
-var timer = setInterval(function () {
-  var nowTime = new Date();
-  var longTime = nowTime - oldTime;
-  var days = parseInt(longTime / 1000 / 60 / 60 / 24, 10);
-  var hours = parseInt(longTime / 1000 / 60 / 60 % 24, 10);
-  var minutes = parseInt(longTime / 1000 / 60 % 60, 10);
-  var seconds = parseInt(longTime / 1000 % 60, 10);
-  $('.uptime').html(longTime = days + " Days " + hours + " Hours " + minutes + " Minutes and " + seconds + " seconds");
+var timer = setInterval(function() {
+    var nowTime = new Date();
+    var longTime = nowTime - oldTime;
+    var days = parseInt(longTime / 1000 / 60 / 60 / 24, 10);
+    var hours = parseInt(longTime / 1000 / 60 / 60 % 24, 10);
+    var minutes = parseInt(longTime / 1000 / 60 % 60, 10);
+    var seconds = parseInt(longTime / 1000 % 60, 10);
+    $('.uptime').html(longTime = days + " Days " + hours + " Hours " + minutes + " Minutes and " + seconds + " seconds");
 }, 1000);
