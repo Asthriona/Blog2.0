@@ -1,32 +1,37 @@
 <%- include('partials/header.ejs') -%>
-<%- include('partials/navbar.ejs') -%>
-<div class="container">
-        <h1 class="mb-4">Poggy!</h1>
-        <div class="row">
-            <div class="posts col col-sm-12">
-                <% let hidden = [];
+    <%- include('partials/navbar.ejs') -%>
+        <div class="container-fluid">
+            <h1 class="mb-4">Poggy!</h1>
+            <div class="row">
+                <div class="posts offset-lg-1 col-sm-12 col-lg-6">
+                    <% let hidden = [];
                 for (let i = 0; i < articles.length; i++){
                     if(articles[i].hidden == false){
                         hidden.push(articles[i]);
                     };
                 }
                 hidden.forEach(articles =>{ %>
-                <a href="/articles/<%= articles.slug %>" style="text-decoration: none; color: black;">
-                <div class="card mt-4 mx-2">
-                    <img class="preview-thumb" src="<%= articles.img %>" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title"><%= articles.title %></h4>
-                        <div class="card-subtitle text-muted mb-2">
-                            <%= articles.createdAt.toLocaleDateString() %>
-                        </div>
-                        <div class="card-text mb-2">
-                            <%= articles.description %>
-                        </div>
-                    </div>
+                        <a href="/articles/<%= articles.slug %>" style="text-decoration: none; color: black;">
+                            <div class="card">
+                                <img class="preview-thumb" src="<%= articles.img %>" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <%= articles.title %>
+                                    </h4>
+                                    <div class="card-subtitle text-muted mb-2">
+                                        <%= articles.createdAt.toLocaleDateString() %>
+                                    </div>
+                                    <div class="card-text mb-2">
+                                        <%= articles.description %>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <% }) %>
                 </div>
-                </a>
-                <% }) %>
-        </div>
-        </div>
+                <div class="col-lg-1"></div>
+                <%- include('partials/sidebar.ejs') %>
+                    <div class="col-lg-1"></div>
+            </div>
         </div>
         <%- include('partials/footer.ejs') -%>

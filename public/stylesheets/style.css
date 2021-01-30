@@ -1,28 +1,31 @@
-html, body{
+html,
+body {
     background-color: #232323;
     color: aliceblue;
 }
+
 .card {
-    width: 25rem;
-    height: 25rem;
     background-color: #1b1b1b;
     color: aliceblue;
+    margin-bottom: 40px;
 }
+
 .post-thumbnail {
     width: 100%;
     height: 400px;
     background-size: cover;
-    background-position: center;
-  }
-.preview-thumb{
+}
+
+.preview-thumb {
     background-position: 50%;
     background-size: cover;
-    width: 100%;
+    object-fit: cover;
     height: 10rem;
 }
-.posts{
+
+.posts {
     padding: 2rem;
-    display: inline-flex;
+    /* display: inline-flex; */
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -32,26 +35,41 @@ html, body{
     text-align: center;
 }
 
-.content a:link { color: #d86100; }
-.content a:visited { color: #d86100; }
-.content a:hover { color: #d86100; }
-.content a:active { color: #d86100; }
+.content a:link {
+    color: #d86100;
+}
+
+.content a:visited {
+    color: #d86100;
+}
+
+.content a:hover {
+    color: #d86100;
+}
+
+.content a:active {
+    color: #d86100;
+}
+
 #page-container {
     position: relative;
     min-height: 100vh;
-  }
-  
-  #content-wrap {
-    padding-bottom: 8rem;    /* Footer height */
-  }
-  
-  #footer {
+}
+
+#content-wrap {
+    padding-bottom: 8rem;
+    /* Footer height */
+}
+
+#footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 8.5rem;            /* Footer height */
-  }
-  .main-header {
+    height: 8.5rem;
+    /* Footer height */
+}
+
+.main-header {
     position: fixed;
     z-index: 1;
     top: 0;
@@ -60,9 +78,11 @@ html, body{
     background: #38529C;
     height: 4.5rem;
 }
+
 .main-nav {
     height: 100%;
 }
+
 .nav-link {
     list-style: none;
     margin: 0;
@@ -74,6 +94,7 @@ html, body{
     margin: 0 1rem;
     padding: 0.3rem;
 }
+
 .nav-links {
     height: 100%;
     display: flex;
@@ -82,69 +103,98 @@ html, body{
     margin: 0 1rem;
     padding: 0.3rem;
 }
+
 .nav-link.nav-link.nuxt-link-exact-active {
     border-bottom: 3px solid #ffd000;
 }
+
 .nav-links a {
     display: block;
     text-decoration: none;
     color: white;
 }
+
 .nav-link a:hover,
 .nav-link a:active,
 .nav-link.nuxt-link-exact-active a {
     color: #ffd000;
 }
-li{
+
+li {
     list-style-type: none;
 }
 
 
-
 /* Footer by Aimee => http://www.mangoya.cn/ */
-.footBack{
-    color:#888;
+
+.footBack {
+    color: #888;
     margin-top: 10px;
     font-size: 12px;
     line-height: 0.5;
     text-align: center;
-    width:100%;
+    width: 100%;
     min-height: 50px;
     margin-top: 25px;
     position: absolute;
 }
-.fcontainer{
-    width:100%;
+
+.fcontainer {
+    width: 100%;
     background: #1b1b1b;
-    padding:15px 10px 10px 10px;
+    padding: 15px 10px 10px 10px;
     box-sizing: border-box;
     width: 100%!important;
 }
-.footBack a{
-    color:#d86100;
+
+.footBack a {
+    color: #d86100;
     z-index: 3;
 }
+
 .user {
     z-index: 2;
     position: absolute;
     top: 10px;
     left: 10px;
     font-size: 20px;
-  }
+}
+
 .user a {
     text-decoration: none;
     color: white;
 }
+
 .logoutbtn {
     z-index: 2;
     position: absolute;
     top: 15px;
     right: 10px;
-  }
-.jumbotron{
+}
+
+.jumbotron {
     background-color: #1b1b1b !important;
 }
-.profilpict{
-    float:left;
-    height:110px;
+
+.profilpict {
+    float: left;
+    height: 110px;
+}
+
+.social a {
+    text-decoration: none;
+    color: white;
+}
+
+.parthner {
+    filter: grayscale(1.0);
+}
+
+.parthner:hover {
+    filter: none;
+}
+
+.backdrop {
+    background-color: #1b1b1b;
+    padding: 25px;
 }
